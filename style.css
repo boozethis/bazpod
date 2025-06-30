@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: 'Fredoka', sans-serif;
-  background-color: var(--bg-color, #fff0f5); /* fallback to pink if JS fails */
+  background-color: #fff0f5;
   color: #333;
   text-align: center;
 }
