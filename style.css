@@ -110,3 +110,12 @@ footer {
   color: #000;
   transform: scale(1.05);
 }
+.clickable-image,
+.clickable-embed {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.clickable-image:hover {
+  transform: scale(1.03);
+}
