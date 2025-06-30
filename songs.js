@@ -1,94 +1,94 @@
 const songs = [
   {
-    title: "Quokka Mocha Cocker",
-    img: "assets/quokka-mocha-cocker.png",
-    youtube: "https://youtu.be/VKX9BjoBF2U?si=awERV4egchmga4ua",
-    spotify: "https://open.spotify.com/track/6nhHKkRH2mK3TfdaVv3pkY",
-    hyperfollow: "https://distrokid.com/hyperfollow/bazpod/quokka-mocha"
+    "title": "Westie Ballerini",
+    "img": "https://i.scdn.co/image/ab67616d0000b2738e858e54e203bf461e32fbb7",
+    "spotify": "https://open.spotify.com/album/7baF2x8zMCfQ6piQRcqSec",
+    "youtube": "#",
+    "hyperfollow": "#"
   },
   {
-    title: "Crannchu na Coille",
-    img: "assets/crannchu na coille.png",
-    youtube: "#",
-    spotify: "https://open.spotify.com/album/2TXC3eU1j9fb93ncMzTbwD",
-    hyperfollow: "https://distrokid.com/hyperfollow/bazpod/crannchu-na-coille"
+    "title": "Tarsiidae Pemalu",
+    "img": "https://i.scdn.co/image/ab67616d0000b27367aeec045f33190448ddd7f7",
+    "spotify": "https://open.spotify.com/album/4WBBoejNAYQz1bkFqWM5Dz",
+    "youtube": "#",
+    "hyperfollow": "#"
   },
   {
-    title: "Kitty Coconutty",
-    img: "assets/kitty-coconutty.png",
-    youtube: "#",
-    spotify: "https://open.spotify.com/album/2DEjFPw76BmRPbC74S9zaD",
-    hyperfollow: "https://distrokid.com/hyperfollow/bazpod/kitty-coconutty"
+    "title": "Macaccino Gelatone",
+    "img": "https://i.scdn.co/image/ab67616d0000b273965c73d7756a84d243c9616b",
+    "spotify": "https://open.spotify.com/album/0ErSR1h4KrxJwGWca1GnQp",
+    "youtube": "#",
+    "hyperfollow": "#"
   },
   {
-    title: "Antilocapra Ikaika",
-    img: "assets/antilocapra-ikaika.png",
-    youtube: "#",
-    spotify: "https://open.spotify.com/album/3Odm2IKzxS9QXz8qDSFWpu",
-    hyperfollow: "https://distrokid.com/hyperfollow/bazpod/antilocapra-ikaika"
+    "title": "Jerboa Dipodoa",
+    "img": "https://i.scdn.co/image/ab67616d0000b273fdb9fb633078eb26c314caf7",
+    "spotify": "https://open.spotify.com/album/0zHgVt4sCSNphfciCztD4c",
+    "youtube": "#",
+    "hyperfollow": "#"
   },
   {
-    title: "Tarsiidae Pemalu",
-    img: "assets/tarsiidae-pemalu.png",
-    youtube: "#",
-    spotify: "https://open.spotify.com/track/5P4MdBerWBLTiNVrvGLs3g",
-    hyperfollow: "https://distrokid.com/hyperfollow/bazpod/tarsiidae-pemalu"
+    "title": "Colorino Tweetolini",
+    "img": "https://i.scdn.co/image/ab67616d0000b2739ee956e8c2c7c9e40133a8ed",
+    "spotify": "https://open.spotify.com/album/2AGtldyiAfN9pmVMHH9TPc",
+    "youtube": "#",
+    "hyperfollow": "#"
   },
   {
-    title: "Westie Ballerini",
-    img: "assets/westie-ballerini.png",
-    youtube: "#",
-    spotify: "https://open.spotify.com/track/6mBpvP7sj2Fmmx0tEPiv1i",
-    hyperfollow: "https://distrokid.com/hyperfollow/bazpod/westie-ballerini"
+    "title": "Antilocapra Ikaika",
+    "img": "https://i.scdn.co/image/ab67616d0000b2732cceb39efa2b503b5aada024",
+    "spotify": "https://open.spotify.com/album/3Odm2IKzxS9QXz8qDSFWpu",
+    "youtube": "#",
+    "hyperfollow": "#"
   },
   {
-    title: "Macaccino Gelatone",
-    img: "assets/macaccino-gelatone.png",
-    youtube: "#",
-    spotify: "https://open.spotify.com/track/3kaRTyzVJN7PMoYn9ttHS7",
-    hyperfollow: "https://distrokid.com/hyperfollow/bazpod/macaccino-gelatone"
+    "title": "Zazi the Ant Queen",
+    "img": "https://i.scdn.co/image/ab67616d0000b273e96f33322912f5ee21375f1d",
+    "spotify": "https://open.spotify.com/album/5qoH6PLp0G4BmMuMtGrWt5",
+    "youtube": "#",
+    "hyperfollow": "#"
   },
   {
-    title: "Colorino Tweetolini",
-    img: "assets/colorino-tweetolini.png",
-    youtube: "#",
-    spotify: "https://open.spotify.com/album/2AGtldyiAfN9pmVMHH9TPc",
-    hyperfollow: "https://distrokid.com/hyperfollow/bazpod/colorino-tweetolini"
+    "title": "Quokka Mocha",
+    "img": "https://i.scdn.co/image/ab67616d0000b273b8f77b498edbb58078212039",
+    "spotify": "https://open.spotify.com/album/3ldyOTT9WBUp4yFotsJYAd",
+    "youtube": "#",
+    "hyperfollow": "#"
   },
   {
-    title: "Jerboa Dipodoa",
-    img: "assets/jerboa-dipodoa.png",
-    youtube: "#",
-    spotify: "https://open.spotify.com/album/0zHgVt4sCSNphfciCztD4c",
-    hyperfollow: "https://distrokid.com/hyperfollow/bazpod/jerboa-dipodoa"
+    "title": "Pigini Bikini",
+    "img": "https://i.scdn.co/image/ab67616d0000b273023f357f18607ad69d3e5e8d",
+    "spotify": "https://open.spotify.com/album/6tKkgjBrfMZvbwne91dRGR",
+    "youtube": "#",
+    "hyperfollow": "#"
   },
   {
-    title: "Aleena Jalapeña",
-    img: "assets/aleena-jalapena.png",
-    youtube: "https://youtu.be/yQtbKMp79dE?si=XQJnLoGCvw5tOrpq",
-    spotify: "https://open.spotify.com/album/7LxwQV3puQZPq1nXp4cLmT",
-    hyperfollow: "https://distrokid.com/hyperfollow/bazpod/aleena-jalapea"
+    "title": "Kitty Coconutty",
+    "img": "https://i.scdn.co/image/ab67616d0000b273ab93948887d70acd6b562b7b",
+    "spotify": "https://open.spotify.com/album/2DEjFPw76BmRPbC74S9zaD",
+    "youtube": "#",
+    "hyperfollow": "#"
   },
   {
-    title: "Axolotti Springalotti",
-    img: "assets/axolotti-springalotti.png",
-    youtube: "https://youtu.be/Hy5l5r0kpBk?si=hF6l4Pz2TJ0YyRnQ",
-    spotify: "https://open.spotify.com/album/1tJtXbEgtjLzO1CtPtpQIv",
-    hyperfollow: "https://distrokid.com/hyperfollow/bazpod/axolotti-springalotti"
+    "title": "Crannchu na Coille",
+    "img": "https://i.scdn.co/image/ab67616d0000b2732909b781f3e9da43e00376c3",
+    "spotify": "https://open.spotify.com/album/2TXC3eU1j9fb93ncMzTbwD",
+    "youtube": "#",
+    "hyperfollow": "#"
   },
   {
-    title: "Pigini Bikini",
-    img: "assets/pigini-bikini.png",
-    youtube: "https://youtu.be/EffECcVZP2w?si=GQpNZ8MyquJqiLDi",
-    spotify: "https://open.spotify.com/track/4zlDLuuNWGWOrL3WaWVoMQ",
-    hyperfollow: "https://distrokid.com/hyperfollow/bazpod/pigini-bikini"
+    "title": "Axolotti Springalotti",
+    "img": "https://i.scdn.co/image/ab67616d0000b2733f8f5fb9f97f6ad17e1d1c60",
+    "spotify": "https://open.spotify.com/album/1tJtXbEgtjLzO1CtPtpQIv",
+    "youtube": "#",
+    "hyperfollow": "#"
   },
   {
-    title: "Zazi the Ant Queen",
-    img: "assets/zazi-the-ant-queen.png",
-    youtube: "https://youtu.be/rWos0iqrjSo?si=Exw9sUqG4I2Y0AhI",
-    spotify: "https://open.spotify.com/track/7EhmOcOSn1WdVHwtBR6Xv2",
-    hyperfollow: "https://distrokid.com/hyperfollow/bazpod/zazi-the-ant-queen"
+    "title": "Aleena Jalapeña",
+    "img": "https://i.scdn.co/image/ab67616d0000b273695ef9a291b22aa8bd241681",
+    "spotify": "https://open.spotify.com/album/7LxwQV3puQZPq1nXp4cLmT",
+    "youtube": "#",
+    "hyperfollow": "#"
   }
 ];
 
