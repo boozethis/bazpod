@@ -119,3 +119,6 @@ footer {
 .clickable-image:hover {
   transform: scale(1.03);
 }
+.spotify-embed {
+  margin-top: 1rem;
+}
