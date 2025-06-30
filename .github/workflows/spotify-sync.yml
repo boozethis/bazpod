@@ -1,9 +1,9 @@
 name: Sync Spotify Releases
 
 on:
-  workflow_dispatch:     # Allow manual trigger
+  workflow_dispatch:
   schedule:
-    - cron: "0 8 * * *"   # Runs daily at 08:00 UTC
+    - cron: "0 8 * * *"
 
 jobs:
   update-songs:
@@ -28,9 +28,9 @@ jobs:
         run: |
           git config --global user.name "bazpod-bot"
           git config --global user.email "boozethis@users.noreply.github.com"
-          git pull --rebase origin main
           git add songs.js
           git commit -m "🔁 Auto-update songs from Spotify" || echo "No changes to commit"
+          git pull origin main --rebase
           git push origin main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
