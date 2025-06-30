@@ -49,7 +49,6 @@ songs.forEach((song) => {
   grid.appendChild(card);
 });
 
-// Toggle YouTube embed on image/player click
 document.addEventListener("click", (e) => {
   const container = e.target.closest(".media-container");
   if (!container) return;
