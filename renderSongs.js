@@ -4,10 +4,19 @@ function extractYouTubeId(url) {
   return match ? match[1] : null;
 }
 
+function extractSpotifyId(url) {
+  const parts = url.split("/");
+  const id = parts.pop().split("?")[0];
+  const type = url.includes("album") ? "album" : "track";
+  return { id, type };
+}
+
 const grid = document.querySelector(".song-grid");
 
 songs.forEach((song) => {
   const videoId = extractYouTubeId(song.youtube);
+  const { id: spotifyId, type: spotifyType } = extractSpotifyId(song.spotify);
+
   const card = document.createElement("div");
   card.className = "song-card";
 
@@ -26,12 +35,21 @@ songs.forEach((song) => {
       <a href="${song.spotify}" target="_blank">Spotify</a>
       <a href="${song.hyperfollow}" target="_blank">Hyperfollow</a>
     </div>
+    <div class="spotify-embed">
+      <iframe
+        style="border-radius:12px"
+        src="https://open.spotify.com/embed/${spotifyType}/${spotifyId}?utm_source=generator"
+        width="100%" height="80" frameborder="0" allowfullscreen=""
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy">
+      </iframe>
+    </div>
   `;
 
   grid.appendChild(card);
 });
 
-// Toggle embed <-> image
+// Toggle YouTube embed on image/player click
 document.addEventListener("click", (e) => {
   const container = e.target.closest(".media-container");
   if (!container) return;
