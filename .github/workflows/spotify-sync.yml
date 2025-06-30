@@ -23,12 +23,14 @@ jobs:
       - name: Run Spotify sync script
         run: node scripts/fetchSpotify.js
 
-      - name: Commit changes
+      - name: Commit & Push changes
         run: |
           git config --global user.name "bazpod-bot"
-          git config --global user.email "bot@bazpod.com"
+          git config --global user.email "boozethis@users.noreply.github.com"
+          git pull origin main --rebase
           git add songs.js
           git commit -m "🔁 Auto-update songs from Spotify" || echo "No changes to commit"
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
