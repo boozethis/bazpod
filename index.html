@@ -13,18 +13,7 @@
 <meta name="apple-mobile-web-app-title" content="bazpod" />
 <link rel="manifest" href="/assets/site.webmanifest" />
 </head>
-  <script>
-  const colors = [
-    "linear-gradient(to bottom, #fce4ec, #f8bbd0)", // pink
-    "linear-gradient(to bottom, #dcedc8, #aed581)", // green
-    "linear-gradient(to bottom, #b3e5fc, #4fc3f7)", // blue
-    "linear-gradient(to bottom, #fff9c4, #fff176)", // yellow
-    "linear-gradient(to bottom, #e1bee7, #ce93d8)", // purple
-    "linear-gradient(to bottom, #ffe0b2, #ffcc80)"  // orange
-  ];
-  document.body.style.background = colors[Math.floor(Math.random() * colors.length)];
-</script>
-<body>
+ <body>
   <div class="clouds">
   <div class="cloud cloud-1"></div>
   <div class="cloud cloud-2"></div>
@@ -55,5 +44,10 @@
 
 <script src="songs.js" defer></script>
   <script src="renderSongs.js"></script>
+   <script>
+  const colors = ['#C8FAD3', '#B2F0FB', '#FFF3B0', '#FFD6F3', '#D6C8FA']; // green, blue, yellow, pink, lavender
+  const random = colors[Math.floor(Math.random() * colors.length)];
+  document.body.style.setProperty('--bg-color', random);
+</script>
 </body>
 </html>
