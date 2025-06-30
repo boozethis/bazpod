@@ -1,74 +1,82 @@
-// scripts/fetchSpotify.js
-
 const fs = require("fs");
 const fetch = require("node-fetch");
 
-// ✅ Replace these before committing public code
 const CLIENT_ID = "662913e8548d497f94deb01c4e0e6992";
 const CLIENT_SECRET = "e5d421a584e742699f1e5229d0bec400";
 const ARTIST_ID = "4sq3Qy5cc3XkRiEAurm6yC";
 
-async function getAccessToken() {
-  const res = await fetch("https://accounts.spotify.com/api/token", {
+const getAccessToken = async () => {
+  const response = await fetch("https://accounts.spotify.com/api/token", {
     method: "POST",
     headers: {
-      "Authorization": "Basic " + Buffer.from(CLIENT_ID + ":" + CLIENT_SECRET).toString("base64"),
-      "Content-Type": "application/x-www-form-urlencoded"
+      Authorization:
+        "Basic " +
+        Buffer.from(CLIENT_ID + ":" + CLIENT_SECRET).toString("base64"),
+      "Content-Type": "application/x-www-form-urlencoded",
     },
-    body: "grant_type=client_credentials"
+    body: "grant_type=client_credentials",
   });
 
-  const data = await res.json();
+  const data = await response.json();
   return data.access_token;
-}
+};
 
-async function getReleases(token) {
-  const res = await fetch(`https://api.spotify.com/v1/artists/${ARTIST_ID}/albums?include_groups=single&market=GB&limit=20`, {
-    headers: {
-      "Authorization": "Bearer " + token
-    }
+const getReleases = async (accessToken) => {
+  const url = `https://api.spotify.com/v1/artists/${ARTIST_ID}/albums?include_groups=single,album&limit=50&market=GB`;
+  const response = await fetch(url, {
+    headers: { Authorization: `Bearer ${accessToken}` },
   });
 
-  const data = await res.json();
+  const data = await response.json();
   return data.items;
-}
+};
 
-async function main() {
-  const token = await getAccessToken();
-  const releases = await getReleases(token);
+const loadExistingLinks = () => {
+  if (!fs.existsSync("songs.js")) return {};
+  const raw = fs.readFileSync("songs.js", "utf-8");
+  const match = raw.match(/const songs = (\[.*\]);/s);
+  if (!match) return {};
 
-  const songs = releases.map((release) => {
-    return {
-      title: release.name,
-      img: release.images[0]?.url || "",
-      spotify: release.external_urls.spotify,
-      youtube: "#", // You can manually update this later
-      hyperfollow: "#" // Optional: populate manually or match a pattern
-    };
-  });
+  try {
+    const songs = JSON.parse(match[1]);
+    const linkMap = {};
+    songs.forEach((song) => {
+      linkMap[song.title] = {
+        youtube: song.youtube,
+        hyperfollow: song.hyperfollow,
+      };
+    });
+    return linkMap;
+  } catch {
+    return {};
+  }
+};
 
-  const jsContent = `
-const songs = ${JSON.stringify(songs, null, 2)};
+const saveSongs = (songs) => {
+  const output = `const songs = ${JSON.stringify(songs, null, 2)};`;
+  fs.writeFileSync("songs.js", output);
+};
 
-const grid = document.querySelector(".song-grid");
-songs.forEach(song => {
-  const card = document.createElement("div");
-  card.className = "song-card";
-  card.innerHTML = \`
-    <img src="\${song.img}" alt="\${song.title}" />
-    <h2>\${song.title}</h2>
-    <div class="buttons">
-      <a href="\${song.youtube}" target="_blank">YouTube</a>
-      <a href="\${song.spotify}" target="_blank">Spotify</a>
-      <a href="\${song.hyperfollow}" target="_blank">Hyperfollow</a>
-    </div>
-  \`;
-  grid.appendChild(card);
-});
-`;
+(async () => {
+  const accessToken = await getAccessToken();
+  const releases = await getReleases(accessToken);
+  const links = loadExistingLinks();
 
-  fs.writeFileSync("songs.js", jsContent.trim());
-  console.log("✅ songs.js updated from Spotify releases");
-}
+  const songs = releases
+    .map((release) => {
+      const existing = links[release.name] || {};
+      const url = release.external_urls.spotify;
+      const image = release.images[0]?.url || "";
+      return {
+        title: release.name,
+        image,
+        spotify: url,
+        youtube: existing.youtube || "#",
+        hyperfollow: existing.hyperfollow || "#",
+      };
+    })
+    // Sort oldest to newest
+    .sort((a, b) => new Date(a.release_date) - new Date(b.release_date));
 
-main();
+  saveSongs(songs);
+})();
