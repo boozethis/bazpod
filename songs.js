@@ -1,14 +1,14 @@
 const songs = [
   {
     title: "Quokka Mocha Cocker",
-    img: "assets/quokka-mocha.png",
+    img: "assets/quokka-mocha-cocker.png",
     youtube: "https://youtu.be/VKX9BjoBF2U?si=awERV4egchmga4ua",
     spotify: "https://open.spotify.com/track/6nhHKkRH2mK3TfdaVv3pkY",
     hyperfollow: "https://distrokid.com/hyperfollow/bazpod/quokka-mocha"
   },
   {
     title: "Crannchu na Coille",
-    img: "assets/crannchu-na-coille.png",
+    img: "assets/crannchu na coille.png",
     youtube: "#",
     spotify: "https://open.spotify.com/album/2TXC3eU1j9fb93ncMzTbwD",
     hyperfollow: "https://distrokid.com/hyperfollow/bazpod/crannchu-na-coille"
